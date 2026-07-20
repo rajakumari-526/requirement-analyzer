@@ -1,53 +1,23 @@
-# QA Copilot 🚀
+# 🤖 Requirement Analyzer
 
-An AI-powered VS Code Extension that assists QA Engineers in analyzing requirements, generating test scenarios, test cases, BDD scenarios, and Playwright automation.
-
----
-
-# Project Vision
-
-The goal of QA Copilot is to become an intelligent QA assistant inside Visual Studio Code.
-
-Instead of manually reading lengthy requirements and writing test cases, QA engineers can paste requirements directly into the extension and receive structured analysis.
-
-Future capabilities include:
-
-- Requirement Analysis
-- Requirement Gap Analysis
-- Business Rule Identification
-- Risk Analysis
-- Test Scenario Generation
-- Test Case Generation
-- BDD Generation
-- Playwright Automation Generation
-- Traceability Matrix Generation
+An AI-powered VS Code extension that helps QA Engineers analyze software requirements using a local Large Language Model (Ollama + Qwen 2.5).
 
 ---
 
-# Current Version
+## 🚀 Features
 
-Version: **0.1.0 (MVP)**
-
-Status: **In Development**
+- 📋 Requirement Summary
+- ✅ Functional Requirements
+- 📌 Business Rules
+- ⚠ Risk Analysis
+- 🧪 Test Scenario Generation
+- 🏠 Runs completely offline using Ollama
+- 🔒 No cloud API keys required
+- 💻 VS Code Extension
 
 ---
 
-# Architecture
-
-```
-VS Code Extension
-        │
-        ▼
-Input Box
-        │
-        ▼
-Requirement Analyzer
-        │
-        ▼
-Result
-```
-
-Later architecture
+## 🏗 Architecture
 
 ```
 VS Code Extension
@@ -56,309 +26,100 @@ VS Code Extension
 Requirement Analyzer
         │
         ▼
-AI Engine
+Prompt Builder
         │
         ▼
-OpenAI / Azure OpenAI / Ollama
+Ollama (Qwen2.5)
         │
         ▼
-Generated Output
+Response Parser
+        │
+        ▼
+Markdown Report
 ```
 
 ---
 
-# Project Structure
+## 🛠 Technology Stack
 
-```
-src
-│
-├── analyzer
-│     └── requirementAnalyzer.ts
-│
-├── test
-│
-└── extension.ts
-```
-
----
-
-# Sprint 1 Completed ✅
-
-## Development Environment
-
-- Installed VS Code
-- Installed Node.js
-- Installed npm
-- Installed Git
-- Installed TypeScript
-
----
-
-## VS Code Extension
-
-Created first VS Code Extension using Microsoft's official generator.
-
-Verified:
-
-- Extension loads successfully
-- Extension Development Host launches
-- Extension command executes correctly
-
----
-
-## User Interaction
-
-Implemented the following workflow:
-
-```
-Ctrl + Shift + P
-
-↓
-
-QA Copilot Command
-
-↓
-
-Input Box
-
-↓
-
-Paste Requirement
-
-↓
-
-Requirement Received
-```
-
-Current implementation asks the user to paste a requirement and confirms receipt by displaying the number of characters entered.
-
-Example:
-
-```
-Requirement received (142 characters)
-```
-
----
-
-# Files Created
-
-```
-extension.ts
-```
-
-Purpose
-
-- Registers commands
-- Opens input box
-- Receives requirement
-- Calls business logic (next sprint)
-
----
-
-```
-requirementAnalyzer.ts
-```
-
-Purpose
-
-Will contain all requirement analysis logic.
-
-Currently empty.
-
-This file will become the brain of the application.
-
----
-
-# Current Workflow
-
-```
-QA Engineer
-
-↓
-
-Ctrl + Shift + P
-
-↓
-
-QA Copilot
-
-↓
-
-Paste Requirement
-
-↓
-
-Extension Receives Requirement
-```
-
----
-
-# Pending Work
-
-## Sprint 2
-
-Build Requirement Analyzer Engine
-
-Tasks
-
-- Read pasted requirement
-- Parse requirement text
-- Identify Functional Requirements
-- Identify Non-Functional Requirements
-- Identify Business Rules
-- Identify Assumptions
-- Identify Risks
-- Generate Requirement Summary
-
----
-
-## Sprint 3
-
-Generate Test Scenarios
-
-Output
-
-```
-Requirement
-
-↓
-
-Test Scenarios
-```
-
----
-
-## Sprint 4
-
-Generate Test Cases
-
-Output
-
-```
-Requirement
-
-↓
-
-Test Cases
-```
-
----
-
-## Sprint 5
-
-Generate BDD Scenarios
-
-Output
-
-```
-Requirement
-
-↓
-
-BDD
-```
-
----
-
-## Sprint 6
-
-Generate Playwright Automation
-
-Output
-
-```
-Requirement
-
-↓
-
-Playwright Test
-```
-
----
-
-## Sprint 7
-
-Integrate AI
-
-Replace manual analyzer with AI.
-
-Supported providers
-
-- OpenAI
-- Azure OpenAI
+- TypeScript
+- VS Code Extension API
 - Ollama
+- Qwen 2.5
+- Node.js
+- Git
 
 ---
 
-## Sprint 8
+## 📷 Screenshots
 
-Improve VS Code UI
+### Requirement Input
 
-Features
+*(Add a screenshot here later)*
 
-- Side Panel
-- Rich Output
-- HTML Report
-- Copy to Clipboard
-- Export
+### AI Requirement Analysis
+
+*(Add a screenshot here later)*
 
 ---
 
-# Long-Term Vision
+## 📦 Installation
 
-QA Copilot should become an intelligent QA assistant capable of:
+### Install Ollama
 
+https://ollama.com
+
+Download the Qwen model:
+
+```bash
+ollama pull qwen2.5:7b
 ```
-Requirement
-      │
-      ▼
-Analysis
-      │
-      ▼
-Business Rules
-      │
-      ▼
-Risk Analysis
-      │
-      ▼
-Test Scenarios
-      │
-      ▼
-Test Cases
-      │
-      ▼
-BDD
-      │
-      ▼
-Playwright
-      │
-      ▼
-Automation Review
+
+Install the extension:
+
+```bash
+code --install-extension requirement-analyzer-1.0.0.vsix
 ```
 
 ---
 
-# Current Progress
+## ▶ Usage
 
-| Feature | Status |
-|----------|--------|
-| VS Code Extension | ✅ Completed |
-| Command Registration | ✅ Completed |
-| Input Box | ✅ Completed |
-| Receive Requirement | ✅ Completed |
-| Requirement Analyzer | 🚧 In Progress |
-| Test Scenario Generator | ⏳ Planned |
-| Test Case Generator | ⏳ Planned |
-| BDD Generator | ⏳ Planned |
-| Playwright Generator | ⏳ Planned |
-| AI Integration | ⏳ Planned |
+1. Open VS Code.
+2. Press **Ctrl + Shift + P**
+3. Select:
+
+```
+Requirement Analyzer: Analyze Requirement
+```
+
+4. Paste your requirement.
+5. Review the AI-generated report.
 
 ---
 
-# Notes
+## 🎯 Roadmap
 
-Current implementation is intentionally simple.
+- [x] AI Requirement Analysis
+- [ ] Requirement Quality Score
+- [ ] Missing Requirement Detection
+- [ ] Questions for Business Analyst
+- [ ] Manual Test Case Generation
+- [ ] BDD Scenario Generation
+- [ ] Playwright Test Generation
 
-The project is being built incrementally following professional software engineering practices.
+---
 
-The first goal is to create a stable architecture before integrating AI services.
+## 👨‍💻 Author
+
+**Rajakumari Gundapanenei Naga**
+
+GitHub:
+
+https://github.com/rajakumari-526
+
+---
+
+## ⭐ If you like this project
+
+Please consider giving it a ⭐ on GitHub.
